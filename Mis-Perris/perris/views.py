@@ -32,9 +32,9 @@ def redirigir(request):
     perros = Perros_Rescatados.objects.filter(
         published_date__lte=timezone.now()).order_by('published_date')
     if user.has_perm('perris.admin'):
-        return render(request, 'perris/adm.inicio.html', {'perros': perros}) 
+        return render(request, 'perris/inicio.html', {'perros': perros}) 
     else:
-        return render(request, 'perris/perros_disponibles.html',{'perros': perros})   
+        return render(request, 'perris/inicio.html',{'perros': perros})   
 
 
 def login(request):
@@ -50,20 +50,20 @@ def perros_disponibles(request):
 
 
 
-def administrador_inicio(request):
+def administrador(request):
     perros = Perros_Rescatados.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'perris/adm.inicio.html', {'perros': perros})
+    return render(request, 'perris/administrador.html', {'perros': perros})
 
 
 #Vista del Agregar un nuevo post de perro rescatadoo
-def new_post_perro(request):
+def agregarperro(request):
     form = Perro_RescatadoForm()
-    return render(request, 'perris/adm.perro_post_add.html', {'form': form})
+    return render(request, 'perris/agregarperro.html', {'form': form})
 
 
 
 #Guardar los datos del Formulario del Perro rescatado en la BD 
-def new_post_perro(request):
+def agregarperro(request):
    if request.method == "POST":
        form = Perro_RescatadoForm(request.POST or None , request.FILES or None)
        if form.is_valid():
@@ -71,20 +71,20 @@ def new_post_perro(request):
            post.author = request.user
            post.published_date = timezone.now()
            post.save()
-           messages.info(request, 'El Post se agregó correctamente!')
+           messages.info(request, 'El Perro se agregó correctamente!')
            return redirect('adm.inicio')
    else:
        form = Perro_RescatadoForm()
-   return render(request, 'perris/adm.perro_post_add.html', {'form': form})
+   return render(request, 'perris/agregarperro.html', {'form': form})
 
 #Ver mas detalles del Post Perro
 #Detalle del Post
-def detail_post_perro(request, pk):
+def detallesperro(request, pk):
     perros = get_object_or_404(Perros_Rescatados, pk=pk)
-    return render(request, 'perris/adm.perro_post_detail.html', {'perro': perros})
+    return render(request, 'perris/detallesperro.html', {'perro': perros})
 
 #Modificar el POST de Perros y guardarlo
-def edit_post_perro(request, pk):
+def editarperro(request, pk):
     post = get_object_or_404(Perros_Rescatados, pk=pk)
     if request.method == "POST":
         form = Perro_RescatadoForm(request.POST or None , request.FILES or None, instance=post)
@@ -94,17 +94,17 @@ def edit_post_perro(request, pk):
             post.published_date = timezone.now()
             post.save()
             # return redirect('detail_post_perro', pk=post.pk)
-            messages.info(request, 'El Post se Actualizó')
+            messages.info(request, 'La informacion del  perro se actualizo')
             return redirect('adm.inicio')
     else:
         form = Perro_RescatadoForm(instance=post)
-    return render(request, 'perris/adm.perro_post_edit.html', {'form': form})
+    return render(request, 'perris/editarperro.html', {'form': form})
 
 #Eliminar el post del perro
-def delete_post_perro (request , pk):
+def eliminarperro (request , pk):
     perros=Perros_Rescatados.objects.get(pk=pk)
     if request.method =="POST":
         perros.delete()
-        messages.info(request, 'El Post se Eliminó')
+        messages.info(request, 'El Perro ah sido eliminado')
         return redirect ('adm.inicio')
-    return render(request, 'perris/adm.perro_post_delete.html', {'perro': perros})
+    return render(request, 'perris/eliminarperro.html', {'perro': perros})
