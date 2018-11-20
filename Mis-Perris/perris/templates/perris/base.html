@@ -1,0 +1,61 @@
+
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/perris.css' %}">
+    <link rel="stylesheet" href="{% static 'Fuentes/style.css' %}">
+    <script src="main.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="javascript" src="{% static 'validCampoFranz.js' %}"></script>
+    <script>$(function(){
+                $('#postular').click(function(){
+                   $(this).next('#postulante-content').slideToggle();
+                    $(this).ToggleClass('active');
+                });
+            });</script> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MisPerris</title>
+</head>
+<body>
+        <div class="contenido-cabecera">
+                <div class="cabecera-logo">
+                    <img src="{% static 'img/logo.png' %}" alt="logo">
+                </div>
+                <div class="cabecera-lista">
+                    <ul class="lista">
+                         {% if user.is_authenticated %}
+                         {% if user.username == "admin" %}
+                        <li> <a href="{% url 'adm.inicio' %}">Administrar</a> </li>
+                {% else  %}
+          
+                {% endif %}
+       
+                 {% endif %}
+                         {% if user.is_authenticated %}
+                        <li><a href="{% url 'logout' %}">Cerrar Sesion ({{user.username}}) </a> </li>
+                        {% else %}
+                        <li><a href="{% url 'login' %}">Iniciar Sesion</a> </li>
+                        <li><a href="{% url 'registrar' %}">Registrate</a> </li>
+                        {% endif %}
+                        <li><a href="{% url 'perros_disponibles' %}">¿Quieres Adoptar?</a> </li>
+                        <li><a href="http://localhost:8000/">Inicio</a> </li>
+                    </ul>
+        
+                </div>
+        
+                
+            </div>
+            
+            </div>
+        </div>
+    </div>
+    {% block content %}
+            {% endblock %}
+</body>
+
+</html>
+
+<!--    fwerfewfewf  -->
