@@ -1,5 +1,5 @@
-  {
 
+ {
   "name": "#MisPerris",
   "short_name": "#MisPerris",
   "description": "Bienvenid@s a #MisPerris pagina enfocada en la ayuda a perros callejeros, buscandoles familia y un hogar",
@@ -12,12 +12,12 @@
   "lang": "es-cl",
   "icons": [
     {
-      "src": "perris/static/img/icono/icon-128.png",
+      "src": "Mis-Perris/perris/static/img/icono/icon-128.png",
       "sizes": "128x85",
       "type": "image/png"
     },
     {
-        "src": "perris/static/img/icono/icon-144.png",
+        "src": "static/img/icono/icon-144.png",
         "sizes": "144x96",
         "type": "image/png"
     },
