@@ -105,49 +105,6 @@
             
         </div>
         
-    <div class="contenedor-formulario" id="form">
-        
-        <div class="formulario">
-             <ul>
-           <li>
-                   <form >
-                       <li><h3>Postulacion</h3></li>  
-                       <li><label for="email">Correo Electronico:</label></li>                  
-                      <li><input type="email" id="email" size="35" placeholder="Email" required oninput="checkEmail(this)"></li> 
-                      <li><label for="run">Rut:</label></li>  
-                       <li><input type="text" id="run" placeholder="Introduce tu Run" size="35" required oninput="checkRut(this)"></li> 
-                       <li><label for="nombre">Nombre Completo:</label></li>  
-                       <li> <input type="text" id="nombre" placeholder="Intruce tu Nombre completo" size="35"></li> 
-                       <li><label for="bdy">Fecha Nacimiento:</label></li>  
-                       <li> <input type="date" id="bdy" placeholder="Fecha nacimiento" max=”2000-12-31″></li> 
-                       <li><label for="fono">Numero de Contacto:</label></li>  
-                       <li> <input type="text" id="fono" placeholder="Numero de telefono" size="35"></li> 
-                       <li> <label for="Reg"><b>Regiones</b><select id="regiones" placeholder="Regiones" class="input-50" required></select> 
-                        
-                     
-                       </select></label></li> 
-                       <li><label for="cty"><b>Ciudades</b>  <select id="comunas" placeholder="Comunas" class="input-50" required></select>                       
-                                                
-
-                        </select></label></li>
-                       <li><label for="chk"><b>Tipo Vivienda</b><select>
-                           <option value="casa2">Casa con patio grande</option>
-                            <option value="casa3">Casa con patio pequeño</option>
-                             <option value="casa4">Casa sin patio</option>
-                            <option value="casa5">Departamento</option>
-
-                       </select></label></li>
-                        <input type="submit" id="postulante" value="Postular">
-                        
-                        <div class="cerrar">
-                            <a href="">X</a>
-                       </div> 
-               </form>           
-            </li>
-           </ul>
-        </div>
-      
-    </div>
           
     </main>
 
@@ -282,7 +239,6 @@
         
     </footer>
     <script src="{% static 'js/slider.js' %}"></script>
-     <script src="{% static 'js/jquery.js' %}"></script>
     </div>
     
     {% endblock %}

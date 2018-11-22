@@ -2,20 +2,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="theme-color" content="#85d4b7">
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="shortcut icon" type="image/png" href="{% static 'img/icono/icon.png' %}">
+        <link rel="apple-touch-icon" href="{% static 'img/icono/icon.png' %}">
+        <link rel="apple-touch-startup-image" href="{% static 'img/icono/icon.png' %}">
+      
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/perris.css' %}">
     <link rel="stylesheet" href="{% static 'Fuentes/style.css' %}">
     <link rel="manifest" href="{% static 'json/manifest.json' %}">
-    <script src="main.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script type="javascript" src="{% static 'validCampoFranz.js' %}"></script>
-    <script>$(function(){
-                $('#postular').click(function(){
-                   $(this).next('#postulante-content').slideToggle();
-                    $(this).ToggleClass('active');
-                });
-            });</script> 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MisPerris</title>
 

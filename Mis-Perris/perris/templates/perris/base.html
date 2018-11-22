@@ -1,4 +1,3 @@
-
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="en">
@@ -20,15 +19,7 @@
     <link rel="stylesheet" href="{% static 'css/perris.css' %}">
     <link rel="stylesheet" href="{% static 'Fuentes/style.css' %}">
     <link rel="manifest" href="{% static 'json/manifest.json' %}">
-    <script src="main.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script type="javascript" src="{% static 'validCampoFranz.js' %}"></script>
-    <script>$(function(){
-                $('#postular').click(function(){
-                   $(this).next('#postulante-content').slideToggle();
-                    $(this).ToggleClass('active');
-                });
-            });</script> 
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MisPerris</title>
 </head>
