@@ -16,10 +16,10 @@ from django.contrib.auth.decorators import login_required, permission_required
 
 # Create your views here.
 #Devolver a la pagina de inicio
-def inicio(request):
+def index(request):
 	# Se van agregar los post a la platilla.html
     perros = Perros_Rescatados.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'perris/inicio.html',  {'perros': perros})
+    return render(request, 'perris/index.html',  {'perros': perros})
        
 
 

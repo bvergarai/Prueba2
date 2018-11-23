@@ -5,8 +5,8 @@ from . import views
 from django.urls import path
 
 urlpatterns = [
-    url(r'^$', views.inicio, name="inicio"),
-    url('perris/inicio', views.redirigir, name="redirigir"),
+    url(r'^$', views.index, name="inicio"),
+    url('perris/index', views.redirigir, name="redirigir"),
     url('perris/login', views.login , name="login"),
     url('perris/disponibles', views.perros_disponibles , name="perros_disponibles"),
     url('administrador',views.administrador, name="adm.inicio" ),
