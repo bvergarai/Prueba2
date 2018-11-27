@@ -2,9 +2,14 @@
 //asignar un nombre y versión al cache
 const CACHE_NAME = 'MisPerris',
   urlsToCache = [
-    './',
-    './style.css',
-    './script.js',
+    './index.html',
+    './css/perris.css',
+    './img/crowfunding.jpg',
+    './img/logo.jpg',
+    './img/rescate.jpg',
+    './img/imagenes/Apolo.jpg',
+    './img/imagenes/Duque.jpg',
+    './img/imagenes/Tom.jpg'
   ]
 
 //durante la fase de instalación, generalmente se almacena en caché los activos estáticos
