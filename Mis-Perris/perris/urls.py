@@ -4,6 +4,7 @@ from . import views
 
 from django.urls import path
 
+
 urlpatterns = [
     url(r'^$', views.index, name="inicio"),
     url('perris/index', views.redirigir, name="redirigir"),

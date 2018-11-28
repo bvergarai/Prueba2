@@ -19,6 +19,15 @@ from django.conf.urls import include, url
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
+from rest_framework import routers
+from misperris.quickstart import views
+
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
+
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'', include('perris.urls')),
@@ -45,6 +54,9 @@ urlpatterns = [
          name='password_reset_complete'),  
     #Importamos las URL de el directorio USUARIO
     path('usuario/', include('usuario.urls')),  
+    url(r'^', include(router.urls)),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+
 ]   
 
 urlpatterns +=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
